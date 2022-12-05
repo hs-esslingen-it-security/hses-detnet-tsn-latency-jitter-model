@@ -1,0 +1,241 @@
+{
+    "name": "Topology 2",
+    "description": "An optional description",
+    "nodes": [
+        {
+            "name": "node 0",
+            "syncDomain": "1",
+            "ports": [
+                {
+                    "name": "0",
+                    "gcl": true,
+                    "gclOpen": 30000
+                }
+            ]
+        },
+        {
+            "name": "node 1",
+            "syncDomain": "1",
+            "ports": [
+                {
+                    "name": "0",
+                    "gcl": true,
+                    "gclOffset": 40000,
+                    "gclOpen": 30000
+                },
+                {
+                    "name": "1",
+                    "gcl": true,
+                    "gclOffset": 40000,
+                    "gclOpen": 30000
+                }
+            ]
+        },
+        {
+            "name": "node 2",
+            "syncDomain": "1",
+            "ports": [
+                {
+                    "name": "0",
+                    "gcl": true,
+                    "gclOffset": 80000,
+                    "gclOpen": 30000
+                },
+                {
+                    "name": "1",
+                    "gcl": true,
+                    "gclOffset": 80000,
+                    "gclOpen": 30000
+                },
+                {
+                    "name": "2",
+                    "gcl": true,
+                    "gclOffset": 80000,
+                    "gclOpen": 30000
+                }
+            ]
+        },
+        {
+            "name": "node 3",
+            "syncDomain": "1",
+            "ports": [
+                {
+                    "name": "0",
+                    "gcl": true,
+                    "gclOffset": 120000,
+                    "gclOpen": 30000
+                },
+                {
+                    "name": "1",
+                    "gcl": true,
+                    "gclOffset": 120000,
+                    "gclOpen": 30000
+                },
+                {
+                    "name": "2",
+                    "gcl": true,
+                    "gclOffset": 120000,
+                    "gclOpen": 30000
+                },
+                {
+                    "name": "3",
+                    "gcl": true,
+                    "gclOffset": 120000,
+                    "gclOpen": 30000
+                }
+            ]
+        },
+        {
+            "name": "node 4",
+            "description": "Source for node 2",
+            "syncDomain": "1",
+            "ports": [
+                {
+                    "name": "0",
+                    "gcl": true,
+                    "gclOffset": 40000,
+                    "gclOpen": 30000
+                }
+            ]
+        },
+        {
+            "name": "node 5",
+            "description": "Source for node 3",
+            "syncDomain": "1",
+            "ports": [
+                {
+                    "name": "0",
+                    "gcl": true,
+                    "gclOffset": 80000,
+                    "gclOpen": 30000
+                }
+            ]
+        },
+        {
+            "name": "node 6",
+            "description": "Sink for node 3 (path 2)",
+            "syncDomain": "1",
+            "ports": [
+                {
+                    "name": "0"
+                }
+            ]
+        },
+        {
+            "name": "node 7",
+            "description": "Sink for node 3 (path 1, 3)",
+            "syncDomain": "1",
+            "ports": [
+                {
+                    "name": "0"
+                }
+            ]
+        }
+    ],
+    "edges": [
+        {
+            "port1": ["node 0", "0"],
+            "port2": ["node 1", "0"]
+        },
+
+        {
+            "port1": ["node 1", "1"],
+            "port2": ["node 2", "0"]
+        },
+        {
+            "port1": ["node 4", "0"],
+            "port2": ["node 2", "2"]
+        },
+
+        {
+            "port1": ["node 2", "1"],
+            "port2": ["node 3", "0"]
+        },
+        {
+            "port1": ["node 5", "0"],
+            "port2": ["node 3", "3"]
+        },
+
+        {
+            "port1": ["node 3", "1"],
+            "port2": ["node 6", "0"]
+        },
+
+        {
+            "port1": ["node 3", "2"],
+            "port2": ["node 7", "0"]
+        }
+    ],
+    "streams": [
+        {
+            "name": "Stream 1",
+            "cycleTime": 1000000,
+            "offset": 0,
+            "transmissionWindow": 0,
+            "frameSize": 500,
+            "sender": "node 0",
+            "receiver": "node 7",
+            "priority": 6
+        },
+        {
+            "name": "Stream 2",
+            "cycleTime": 330000,
+            "offset": 0,
+            "transmissionWindow": 0,
+            "frameSize": 64,
+            "sender": "node 4",
+            "receiver": "node 6",
+            "priority": 6
+        },
+        {
+            "name": "Stream 3",
+            "cycleTime": 330000,
+            "offset": 0,
+            "transmissionWindow": 0,
+            "frameSize": 570,
+            "sender": "node 4",
+            "receiver": "node 6",
+            "priority": 6
+        },
+        {
+            "name": "Stream 4",
+            "cycleTime": 330000,
+            "offset": 0,
+            "transmissionWindow": 0,
+            "frameSize": 1518,
+            "sender": "node 4",
+            "receiver": "node 6",
+            "priority": 6
+        },
+        {
+            "name": "Stream 5",
+            "cycleTime": 330000,
+            "offset": 0,
+            "transmissionWindow": 0,
+            "frameSize": 64,
+            "sender": "node 5",
+            "receiver": "node 7",
+            "priority": 7
+        },
+        {
+            "name": "Stream 6",
+            "cycleTime": 330000,
+            "offset": 0,
+            "transmissionWindow": 0,
+            "frameSize": 570,
+            "sender": "node 5",
+            "receiver": "node 7",
+            "priority": 7
+        },
+        {
+            "name": "Stream 7",
+            "cycleTime": 330000,
+            "offset": 0,
+            "transmissionWindow": 0,
+            "frameSize": 1518,
+            "sender": "node 5",
+            "receiver": "node 7",
+            "priority": 7
+        }
+    ]
+}
