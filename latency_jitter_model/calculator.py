@@ -2,11 +2,11 @@ import json
 from math import ceil
 from typing import List
 import networkx as nx
-from jitter_delay_model.path_helpers import get_ancestor_tx_port_node_name, is_rx_port, is_tx_port
-from jitter_delay_model.path_helpers import get_ancestor_forwarding_node_name
-from jitter_delay_model.helpers import ExpressPriorities, PortStatistics, StreamStatistics, debug, get_transmission_duration
-from jitter_delay_model.stream import Stream
-from jitter_delay_model.topology import NodeAttrs, Topology
+from latency_jitter_model.path_helpers import get_ancestor_tx_port_node_name, is_rx_port, is_tx_port
+from latency_jitter_model.path_helpers import get_ancestor_forwarding_node_name
+from latency_jitter_model.helpers import ExpressPriorities, PortStatistics, StreamStatistics, debug, get_transmission_duration
+from latency_jitter_model.stream import Stream
+from latency_jitter_model.topology import NodeAttrs, Topology
 
 class Calculator:
     def __init__(self, topology: Topology, streams: List[Stream]) -> None:

@@ -2,9 +2,9 @@ from typing import Any, List, TypedDict, Union
 import networkx as nx
 import matplotlib.pyplot as plt
 
-from jitter_delay_model.helpers import GclPriorities, ExpressPriorities, Priority, TopologyParsingError, debug, get_transmission_duration
-from jitter_delay_model.path_helpers import is_forwarding_node, is_port
-from jitter_delay_model.stream import Stream, StreamJson
+from latency_jitter_model.helpers import GclPriorities, ExpressPriorities, Priority, TopologyParsingError, debug, get_transmission_duration
+from latency_jitter_model.path_helpers import is_forwarding_node, is_port
+from latency_jitter_model.stream import Stream, StreamJson
 
 TsnDomain = Union[str, None]
 

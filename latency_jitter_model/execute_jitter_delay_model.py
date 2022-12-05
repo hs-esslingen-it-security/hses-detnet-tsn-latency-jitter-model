@@ -1,16 +1,15 @@
 import argparse
 import json
 import pickle
-from jitter_delay_model.calculator import Calculator
-from jitter_delay_model.topology import Topology
-from jitter_delay_model.topology_templates import use_topology_a1, use_topology_a2, use_topology_a3
-from jitter_delay_model.helpers import print_results
+from latency_jitter_model.calculator import Calculator
+from latency_jitter_model.topology import Topology
+from latency_jitter_model.helpers import print_results
 
 
 ALLOWED_SCENARIOS = ["arrival_window", "congestion", "inefficient_trans"]
 
 
-def execute_jitter_delay_model_examples(scenario, topology_path, output_path=None):
+def execute_latency_jitter_model_examples(scenario, topology_path, output_path=None):
     """
     @scenario: Name of the scenario (one from ALLOWED_SCENARIOS)
     @topology_path: Path to the topology json file
@@ -48,7 +47,7 @@ def execute_jitter_delay_model_examples(scenario, topology_path, output_path=Non
     print_results(scenario, topology_instance, calculator)
 
 
-def execute_jitter_delay_model_conext_eval(dataset_path):
+def execute_latency_jitter_model_conext_eval(dataset_path):
     """
     @dataset_path: Path to the dataset pkl file
     """

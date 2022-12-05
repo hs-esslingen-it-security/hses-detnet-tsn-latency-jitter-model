@@ -1,6 +1,6 @@
 from typing import Dict, Literal, List
 
-from jitter_delay_model.path_helpers import is_rx_port
+from latency_jitter_model.path_helpers import is_rx_port
 
 DEBUG = False
 

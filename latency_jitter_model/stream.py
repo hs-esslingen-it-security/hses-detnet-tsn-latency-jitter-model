@@ -1,7 +1,7 @@
 from math import ceil
 from typing import List, TypedDict
 from unicodedata import name
-from jitter_delay_model.helpers import TopologyParsingError, Priority
+from latency_jitter_model.helpers import TopologyParsingError, Priority
 # from topology import Topology, TopologyParsingError
 import networkx as nx
 

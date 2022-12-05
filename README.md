@@ -18,7 +18,7 @@ You're ready to go!
 ## CoNEXT 2022 Dataset
 In the `datasets` folder, we stored the file `dataset_conext2022.pkl` containing all measured values from the CoNEXT evaluation. The according topology per setting will be generated based on the setting name.
 With the following command, you can execute the modeling for all settings and print the complete table with measured and predicted values. (cf. Table 5 in our paper)
-`python -c "import jitter_delay_model; jitter_delay_model.execute_jitter_delay_model_conext_eval(dataset_path='datasets/dataset_conext2022.pkl')"`
+`python -c "import latency_jitter_model; latency_jitter_model.execute_latency_jitter_model_conext_eval(dataset_path='datasets/dataset_conext2022.pkl')"`
 
 The beginning of the table looks as follows:
 ```
@@ -41,7 +41,7 @@ The beginning of the table looks as follows:
 
 ## Generic Examples
 In this section we introduce the example to use a generic topology stored in JSON format. Example topology files are stored in the `datasets` folder.
-The command `python -c "import jitter_delay_model; jitter_delay_model.execute_jitter_delay_model(scenario='arrival_window', topology_path='datasets/topology1.json')"` results in the following output:
+The command `python -c "import latency_jitter_model; latency_jitter_model.execute_latency_jitter_model_examples(scenario='arrival_window', topology_path='datasets/topology1.json')"` results in the following output:
 
 ```
 ----------------------------------------
@@ -69,7 +69,7 @@ Each row in the table corresponds to the reception time (rx) or transmit time (t
 
 ## Create own scenarios
 It is possible to create custom scenarios.
-Just extend the list of scenarios (`ALLOWED_SCENARIOS`) in `execute_jitter_delay_model.py` and handle the new scenario below.
+Just extend the list of scenarios (`ALLOWED_SCENARIOS`) in `execute_latency_jitter_model.py` and handle the new scenario below.
 It is also possible to create a custom topology as we did in `topology_templates.py`.
 
 ## topology.json documentation
