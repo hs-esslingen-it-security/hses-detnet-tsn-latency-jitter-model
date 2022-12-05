@@ -1,5 +1,5 @@
 # Analyzing and Modeling the Latency and Jitter Behavior of Mixed Industrial TSN and DetNet Networks
-This repository implements the model presented at the [CoNEXT '22]().
+This repository implements the model presented in our [paper](https://dl.acm.org/doi/10.1145/3555050.3569138) at the [CoNEXT '22](https://conferences2.sigcomm.org/co-next/2022/#!/home).
 
 ## Setup
 This application requires Python 3.8 or later.
